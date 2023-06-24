@@ -1,0 +1,23 @@
+.navbar {
+    min-height: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .navbar-brand {
+    font-size: 25px;
+  }
+
+  .navbar-brand > img {
+      height: 60px;
+  }
+
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Libre Baskerville', serif;
+}
+
+.body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #ffffffbc;
+  padding-bottom: 20px;
+  }

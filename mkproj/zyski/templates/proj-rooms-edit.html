@@ -1,0 +1,48 @@
+{% extends 'proj-rooms.html' %}
+{% load static %}
+
+{% block content_edit %}
+
+<form method = "post">
+    {% csrf_token %}
+    <!-- Button trigger modal -->
+    <a class="btn btn-danger btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Usuń pomieszczenie</a>
+<tr>
+    <th><button type="submit" class="btn btn-primary btn-sm">Zapisz</button></th>
+    <th scope="row">{{form.r_number}}</th>
+    <td>{{form.r_name}}</td>
+    <td>{{form.r_area}}</td>
+    <td>{{form.r_people}}</td>
+    <td>{{form.r_temp}}</td>
+    <td>{{form.r_air}}</td>
+    <td>{{form.r_light}}</td>
+    <td>{{form.r_person}}</td>
+    <td>{{form.r_devices}}</td>
+    <td>{{form.r_group}}</td>
+    <td>{{form.r_comment}}</td>
+  </tr>
+</form>
+
+<!-- Modal -->
+<form method = "post">
+  {% csrf_token %}
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="staticBackdropLabel">Potwierdź usuwanie</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      Czy na pewno chcesz usunąć pomieszczenie o nazwie: <br><br><h6><i> {{room}} </i></h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+        <button name = "usun" value="{{room.pk}}" type="submit" class="btn btn-danger">Usuń</button>
+      </div>
+          </div>
+        </div>
+      </div>
+</form>
+{% endblock %}
